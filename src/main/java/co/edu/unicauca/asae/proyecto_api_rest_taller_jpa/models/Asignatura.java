@@ -20,20 +20,20 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Espacios_fisicos")
-public class EspacioFisico {
+@Table(name = "Asignaturas")
+public class Asignatura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idEspacioFisico;
+    private Integer idAsignatura;
 
-    @Column(name = "nombre", nullable = false, length = 255, unique = true)
+    @Column(name = "nombre", nullable = false, length = 255)
     private String nombre;
 
-    @Column(name = "capacidad", nullable = false)
-    private Integer capacidad;
+    @Column(name = "codigo", nullable = false, length = 50, unique = true)
+    private String codigo;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "objEspacioFisico")
-    private List<FranjaHoraria> franjasHorarias;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "objAsignatura")
+    private List<Curso> cursos;
 
     // Getters and Setters
 }

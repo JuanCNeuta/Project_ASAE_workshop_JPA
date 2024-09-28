@@ -1,6 +1,6 @@
 package co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.models;
 
-import java.util.List;
+import java.sql.Time;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,7 +10,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,28 +21,28 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Cursos")
-public class Curso {
+@Table(name = "Franja_Horarias")
+public class FranjaHoraria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCurso;
+    private Integer idFranja;
 
-    @Column(name = "nombre", nullable = false, length = 255)
-    private String nombre;
+    @Column(name = "dia", nullable = false, length = 20)
+    private String dia;
 
-    @ManyToOne
-    @JoinColumn(name = "asignatura_id", referencedColumnName = "idAsignatura")
-    private Asignatura objAsignatura;
+    @Column(name = "hora_inicio", nullable = false)
+    private Time horaInicio;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "objCurso")
-    private List<FranjaHoraria> franjasHorarias;
+    @Column(name = "hora_fin", nullable = false)
+    private Time horaFin;
 
-    /*
-     * @ManyToOne
-     * 
-     * @JoinColumn(name = "docente_id", nullable = false)
-     * private Docente docente;
-     */
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "curso_id", referencedColumnName = "idCurso")
+    private Curso objCurso;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "espacio_fisico_id", referencedColumnName = "idEspacioFisico")
+    private EspacioFisico objEspacioFisico;
 
     // Getters and Setters
 }
