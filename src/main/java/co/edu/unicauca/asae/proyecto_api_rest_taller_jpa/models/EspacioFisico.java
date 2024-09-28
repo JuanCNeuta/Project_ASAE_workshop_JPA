@@ -20,7 +20,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Espacios_fisicos")
+@Table(name = "Espacio_Fisico")
 public class EspacioFisico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -20,7 +20,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Asignaturas")
+@Table(name = "Asignatura")
 public class Asignatura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

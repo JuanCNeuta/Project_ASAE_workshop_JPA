@@ -21,7 +21,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Franja_Horarias")
+@Table(name = "Franja_Horaria")
 public class FranjaHoraria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
