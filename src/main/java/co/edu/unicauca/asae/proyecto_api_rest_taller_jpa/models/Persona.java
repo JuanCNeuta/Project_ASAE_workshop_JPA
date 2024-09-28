@@ -18,7 +18,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="persona")
+@Table(name="Persona")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Persona {
     @Id

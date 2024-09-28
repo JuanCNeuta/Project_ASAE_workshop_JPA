@@ -2,9 +2,6 @@ package co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -17,7 +14,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "administrativo")
+@Table(name = "Administrativo")
 @PrimaryKeyJoinColumn(name = "persona_id") 
 public class Administrativo extends Persona{
     
