@@ -8,7 +8,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -28,16 +28,14 @@ public class Docente extends Persona{
     
     private Integer idDocente;
 
-    // Se aplica la relación con Oficina (Many to One)
-    @ManyToOne
-    @JoinColumn(name = "oficina_id", referencedColumnName = "idOficina")
-    private Oficina oficina;
+    @OneToOne
+    @JoinColumn(name = "oficina_id")
+    private Oficina objOficina;
 
     @ManyToMany(fetch =FetchType.EAGER)
     @JoinTable(name = "Curso_Docente",
     joinColumns = @JoinColumn(name = "curso_id"),
     inverseJoinColumns = @JoinColumn(name="docente_id"))
     private List<Curso> cursos;
-    
-    
+      
 }

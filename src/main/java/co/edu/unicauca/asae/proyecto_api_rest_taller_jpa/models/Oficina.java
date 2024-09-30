@@ -33,8 +33,9 @@ public class Oficina {
     @Column(length = 20)
     private String ubicacion;
 
+    /* 
     // Relación con Docente (One to Many)
     @OneToMany(mappedBy = "oficina", cascade = CascadeType.ALL)
-    private List<Docente> docentes;
+    private List<Docente> docentes;*/
 
 }
