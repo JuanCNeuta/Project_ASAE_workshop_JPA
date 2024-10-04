@@ -1,10 +1,10 @@
 package co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.repositories;
 
-import co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.models.Curso;
+import org.springframework.data.repository.CrudRepository;
 
-public interface AsignaturasRepository {
+import co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.models.Asignatura;
 
-    
-} AsignaturasRepository extends CrudRepository<Asignatura,Integer>{
+
+public interface  AsignaturasRepository extends CrudRepository<Asignatura,Integer>{
     
 }
