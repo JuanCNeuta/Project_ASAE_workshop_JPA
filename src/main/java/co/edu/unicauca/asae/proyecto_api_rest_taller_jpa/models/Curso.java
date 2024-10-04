@@ -44,12 +44,4 @@ public class Curso {
     @ManyToMany(mappedBy = "cursos") 
     private List<Docente> docentes;
 
-    /*
-     * @ManyToOne
-     * 
-     * @JoinColumn(name = "docente_id", nullable = false)
-     * private Docente docente;
-     */
-
-    // Getters and Setters
 }
