@@ -33,4 +33,10 @@ public class Persona {
 
     @Column(length = 50 , unique = true)
     private String correoPersona;
+
+    public Persona(String nombrePersona,String apellidoPersona,String correoPersona){
+        this.nombrePersona=nombrePersona;
+        this.apellidoPersona=apellidoPersona;
+        this.correoPersona=correoPersona;
+    }
 }
