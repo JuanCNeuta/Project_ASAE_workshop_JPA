@@ -8,9 +8,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.models.Asignatura;
+import co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.models.Curso;
 import co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.models.Docente;
 import co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.models.Oficina;
-import co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.models.Persona;
 import co.edu.unicauca.asae.proyecto_api_rest_taller_jpa.repositories.DocentesRepository;
 import jakarta.transaction.Transactional;
 
@@ -19,7 +20,7 @@ import jakarta.transaction.Transactional;
 public class ProyectoApiRestTallerJpaApplication implements CommandLineRunner{
 
 	@Autowired
-	private DocentesRepository docenteRepository;
+	private DocentesRepository servicioDBDocente;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoApiRestTallerJpaApplication.class, args);
@@ -37,30 +38,36 @@ public class ProyectoApiRestTallerJpaApplication implements CommandLineRunner{
         oficina.setNombre("Oficina-204");
         oficina.setUbicacion("Ingeniería");
 
-		// Creación oficina #2
-        Oficina oficina2 = new Oficina();
-        oficina2.setNombre("Oficina-205");
-        oficina2.setUbicacion("Ingeniería");
-
         // Crear docentes
-        Docente docente = new Docente("Juan","Perez","jperez@universidad.edu",22);
-		Docente docente2= new Docente("Carlos", "Lopez", "carlos@universidad.edu", 12);
+        Docente objDocente = new Docente("Juan","Perez","jperez@universidad.edu");
         
 		//Asignacion de oficinas a los docentes
-        docente.setObjOficina(oficina);
-		docente2.setObjOficina(oficina2);
+        objDocente.setObjOficina(oficina);
+		oficina.setObjDocente(objDocente);
 
         // Guardar los docentes, lo cual también guardará la persona y la oficina en cascada
         //docenteRepository.save(docente);
 		//docenteRepository.save(docente2);
 
-		List<Docente> listaDocentes = new LinkedList();
-		listaDocentes.add(docente);
-		listaDocentes.add(docente2);
-
-		docenteRepository.saveAll(listaDocentes);
+		servicioDBDocente.save(objDocente);
 
         System.out.println("Docentes, personas y oficinas almacenados con éxito.");
+	}
+
+	public void crearCurso(Integer idAsignatura, Integer idDocente){
+		List<Docente> listaDocentes = new LinkedList<>();
+
+		Curso objCurso = new Curso("Programacion");
+
+		Asignatura objAsignatura = new Asignatura("Base de datos", "B1");
+
+
+		Docente objDocente = new Docente("Carlos", "Osorio", "cosoario@universidad.edu");
+		listaDocentes.add(objDocente);
+		servicioDBDocente.save(objDocente);
+
+		objCurso.setObjAsignatura(objAsignatura);
+		objCurso.setDocentes(listaDocentes);
 	}
 
 }

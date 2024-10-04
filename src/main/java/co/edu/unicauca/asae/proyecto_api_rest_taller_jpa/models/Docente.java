@@ -24,8 +24,6 @@ import lombok.Setter;
 @PrimaryKeyJoinColumn(name = "persona_id") // une con la tabla Persona
 public class Docente extends Persona{
 
-    
-    private Integer idDocente;
 
     @OneToOne(cascade =CascadeType.PERSIST)
     @JoinColumn(name = "oficina_id", referencedColumnName = "idOficina")
@@ -41,9 +39,8 @@ public class Docente extends Persona{
         super();
     }
 
-    public Docente(String nombrePersona, String apellidoPersona, String correoPersona,Integer idDocente){
+    public Docente(String nombrePersona, String apellidoPersona, String correoPersona){
         super(nombrePersona, apellidoPersona, correoPersona);
-        this.idDocente=idDocente;
     }
 
     public void agregarCurso(Curso curso){

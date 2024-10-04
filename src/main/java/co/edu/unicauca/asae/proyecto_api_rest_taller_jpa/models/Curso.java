@@ -51,5 +51,7 @@ public class Curso {
      * private Docente docente;
      */
 
-    // Getters and Setters
+    public Curso(String nombre){
+        this.nombre=nombre;
+    }
 }

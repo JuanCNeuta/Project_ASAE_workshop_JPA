@@ -12,13 +12,11 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Asignatura")
 public class Asignatura {
@@ -35,5 +33,8 @@ public class Asignatura {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "objAsignatura")
     private List<Curso> cursos;
 
-    // Getters and Setters
+    public Asignatura(String nombre,String codigo){
+        this.nombre=nombre;
+        this.codigo=codigo;
+    }
 }
