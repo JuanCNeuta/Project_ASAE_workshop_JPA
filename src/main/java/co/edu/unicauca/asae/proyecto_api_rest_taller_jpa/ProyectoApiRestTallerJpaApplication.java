@@ -46,9 +46,9 @@ public class ProyectoApiRestTallerJpaApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		//crearDocente();
-		crearFranjaHoraria(1, 1, "Lunes", Time.valueOf("08:00:00"), Time.valueOf("10:00:00"));
-		crearFranjaHoraria(1, 1, "Martes", Time.valueOf("08:00:00"), Time.valueOf("10:00:00"));
-		listarFranjasHorarias();
+		//crearFranjaHoraria(1, 1, "Lunes", Time.valueOf("08:00:00"), Time.valueOf("10:00:00"));
+		//crearFranjaHoraria(1, 1, "Martes", Time.valueOf("08:00:00"), Time.valueOf("10:00:00"));
+		//listarFranjasHorarias();
 	}
 
 	private void crearDocente(){
@@ -74,7 +74,7 @@ public class ProyectoApiRestTallerJpaApplication implements CommandLineRunner{
         System.out.println("Docentes, personas y oficinas almacenados con éxito.");
 	}
 
-	public void crearCurso(Integer idAsignatura, Integer idDocente){
+	private void crearCurso(Integer idAsignatura, Integer idDocente){
 		List<Docente> listaDocentes = new LinkedList<>();
 
 		Curso objCurso = new Curso("Programacion");
