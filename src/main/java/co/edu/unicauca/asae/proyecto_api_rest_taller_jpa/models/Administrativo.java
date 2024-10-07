@@ -18,9 +18,6 @@ import lombok.Setter;
 @PrimaryKeyJoinColumn(name = "persona_id") 
 public class Administrativo extends Persona{
     
-
-    private Integer idAdministrativo;
-
     @Column(length = 255)
     private String rol;
 }

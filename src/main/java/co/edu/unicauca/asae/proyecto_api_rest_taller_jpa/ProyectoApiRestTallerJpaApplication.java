@@ -47,6 +47,7 @@ public class ProyectoApiRestTallerJpaApplication implements CommandLineRunner {
         SpringApplication.run(ProyectoApiRestTallerJpaApplication.class, args);
     }
 
+<<<<<<< HEAD
     @Override
     public void run(String... args) throws Exception {
         // crearDocente();
@@ -59,6 +60,15 @@ public class ProyectoApiRestTallerJpaApplication implements CommandLineRunner {
         // consultarFranjaPorDocente(3);
         // eliminarCurso(2);
     }
+=======
+	@Override
+	public void run(String... args) throws Exception {
+		//crearDocente();
+		//crearFranjaHoraria(1, 1, "Lunes", Time.valueOf("08:00:00"), Time.valueOf("10:00:00"));
+		//crearFranjaHoraria(1, 1, "Martes", Time.valueOf("08:00:00"), Time.valueOf("10:00:00"));
+		//listarFranjasHorarias();
+	}
+>>>>>>> origin
 
     private void crearDocente() {
 
@@ -84,8 +94,13 @@ public class ProyectoApiRestTallerJpaApplication implements CommandLineRunner {
         System.out.println("DOCENTE, PERSONA Y OFICINA CREADOS CON EXITO.");
     }
 
+<<<<<<< HEAD
     public void crearCurso(Integer idAsignatura, Integer idDocente) {
         List<Docente> listaDocentes = new LinkedList<>();
+=======
+	private void crearCurso(Integer idAsignatura, Integer idDocente){
+		List<Docente> listaDocentes = new LinkedList<>();
+>>>>>>> origin
 
         // Buscar la asignatura
         Optional<Asignatura> consultaAsignatura = servicioDBAsignatura.findById(idAsignatura);
