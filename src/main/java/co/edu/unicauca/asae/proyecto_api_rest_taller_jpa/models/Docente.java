@@ -31,8 +31,8 @@ public class Docente extends Persona{
 
     @ManyToMany(fetch =FetchType.EAGER)
     @JoinTable(name = "Curso_Docente",
-    joinColumns = @JoinColumn(name = "curso_id"),
-    inverseJoinColumns = @JoinColumn(name="docente_id"))
+    joinColumns = @JoinColumn(name = "docente_id"),
+    inverseJoinColumns = @JoinColumn(name="curso_id"))
     private List<Curso> cursos;
 
     public Docente(){

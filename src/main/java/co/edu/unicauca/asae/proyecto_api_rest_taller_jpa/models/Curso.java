@@ -37,19 +37,12 @@ public class Curso {
     @JoinColumn(name = "asignatura_id", referencedColumnName = "idAsignatura")
     private Asignatura objAsignatura;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "objCurso")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "objCurso", cascade = CascadeType.REMOVE)
     private List<FranjaHoraria> franjasHorarias;
 
     //Relacion muchos a muchos bidireccional con docente
     @ManyToMany(mappedBy = "cursos") 
     private List<Docente> docentes;
-
-    /*
-     * @ManyToOne
-     * 
-     * @JoinColumn(name = "docente_id", nullable = false)
-     * private Docente docente;
-     */
 
     public Curso(String nombre){
         this.nombre=nombre;
