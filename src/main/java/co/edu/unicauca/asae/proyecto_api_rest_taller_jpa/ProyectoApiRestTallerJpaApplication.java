@@ -50,13 +50,11 @@ public class ProyectoApiRestTallerJpaApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // crearDocente();
-        // crearFranjaHoraria(1, 1, "Lunes", Time.valueOf("08:00:00"),
-        // Time.valueOf("10:00:00"));
-        // crearFranjaHoraria(3, 1, "Martes",
-        // Time.valueOf("08:00:00"),Time.valueOf("10:00:00"));
-        // listarFranjasHorarias();
-        // crearCurso(2, 3);
-        // consultarFranjaPorDocente(3);
+        // crearCurso(4, 2);
+        // crearFranjaHoraria(1, 4, "Lunes", Time.valueOf("08:00:00"), Time.valueOf("10:00:00"));
+        // crearFranjaHoraria(2, 1, "Martes", Time.valueOf("08:00:00"),Time.valueOf("10:00:00"));
+        // listarFranjasHorarias();   
+        // consultarFranjaPorDocente(1);
         // eliminarCurso(2);
     }
 
